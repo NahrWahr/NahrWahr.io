@@ -8,15 +8,25 @@
 # Variables
 --------------------------------------------------------------*/
 :root {
-  --pastel-bg: #fef9f3; /* Soft cream background */
-  --pastel-text: #5c5c5c; /* Dark grey text */
-  --pastel-heading: #3e4a61; /* Dusky blue/grey headings */
-  --pastel-primary: #a7d8de; /* Soft teal/blue for accents/buttons */
-  --pastel-primary-darker: #8ac6ce; /* Darker shade for hover */
-  --pastel-secondary: #f7d5d9; /* Soft pink for secondary elements */
-  --pastel-border: #e8e0d5; /* Soft border color */
-  --pastel-code-bg: #f0e9e0; /* Background for code blocks */
-  --card-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+  /* Dark Pastel Theme Colors */
+  --dark-bg: #1e2329; /* Dark background */
+  --darker-element: #272e36; /* Slightly lighter than bg for cards */
+  --dark-text: #e0e0e0; /* Light text for dark background */
+  --dark-text-muted: #a0a0a0; /* Muted text for less emphasis */
+  --dark-heading: #c9d8eb; /* Light blue-ish headings */
+  --dark-border: #3a424e; /* Subtle borders */
+  
+  /* Pastel Accent Colors */
+  --pastel-primary: #7cadbd; /* Muted teal */
+  --pastel-primary-darker: #5a8999; /* Darker shade for hover */
+  --pastel-secondary: #bd7ca7; /* Soft pink for secondary elements */
+  --pastel-tertiary: #7cbd8e; /* Soft green for variety */
+  --pastel-highlight: #bdad7c; /* Soft gold for highlights */
+  
+  /* Code and Special Elements */
+  --dark-code-bg: #2a313a; /* Slightly lighter than bg for code */
+  --dark-blockquote-bg: #272e36; /* Subtle background for quotes */
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /*--------------------------------------------------------------
@@ -25,8 +35,8 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.7;
-  color: var(--pastel-text);
-  background-color: var(--pastel-bg);
+  color: var(--dark-text);
+  background-color: var(--dark-bg);
   font-size: 17px;
 }
 
@@ -36,12 +46,17 @@ body {
   padding-left: 25px;
 }
 
+::selection {
+  background: var(--pastel-primary);
+  color: var(--dark-bg);
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  color: var(--pastel-heading);
+  color: var(--dark-heading);
   margin-top: 1.8em;
   margin-bottom: 0.8em;
 }
@@ -53,48 +68,48 @@ p { margin-bottom: 1.3em; }
 
 .page-heading, .post-title {
   padding-bottom: 0.5em;
-  border-bottom: 1px solid var(--pastel-border);
+  border-bottom: 1px solid var(--dark-border);
 }
 
 /*--------------------------------------------------------------
 # Links & Navigation
 --------------------------------------------------------------*/
 a {
-  color: var(--pastel-primary-darker);
+  color: var(--pastel-primary);
   text-decoration: none;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 a:hover,
 a:focus {
-  color: var(--pastel-heading);
+  color: var(--pastel-primary-darker);
   text-decoration: underline;
 }
 
 /* Header Adjustments */
 .site-header {
   border-top: 4px solid var(--pastel-primary);
-  border-bottom: 1px solid var(--pastel-border);
-  background-color: var(--pastel-bg);
+  border-bottom: 1px solid var(--dark-border);
+  background-color: var(--darker-element);
   padding-top: 15px;
   padding-bottom: 15px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .site-title, .site-title:visited {
-  color: var(--pastel-heading) !important;
+  color: var(--dark-heading) !important;
   font-weight: bold;
   letter-spacing: 0.5px;
 }
 
 .site-nav .page-link {
-  color: var(--pastel-text);
+  color: var(--dark-text);
   margin-left: 18px;
   font-weight: 500;
 }
 
 .site-nav .page-link:hover {
-  color: var(--pastel-primary-darker);
+  color: var(--pastel-primary);
   text-decoration: none;
 }
 
@@ -104,7 +119,7 @@ a:focus {
 .button {
   display: inline-block;
   background-color: var(--pastel-primary);
-  color: var(--pastel-heading);
+  color: var(--dark-bg);
   padding: 12px 25px;
   border-radius: 25px;
   text-decoration: none;
@@ -112,16 +127,16 @@ a:focus {
   margin: 5px 10px 5px 0;
   border: 1px solid transparent;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button:hover,
 .button:focus {
   background-color: var(--pastel-primary-darker);
-  color: var(--pastel-heading);
+  color: var(--dark-bg);
   text-decoration: none;
   transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Homepage navigation container */
@@ -129,7 +144,7 @@ a:focus {
   text-align: center;
   margin: 2em auto;
   padding: 2em;
-  background-color: white;
+  background-color: var(--darker-element);
   border-radius: 8px;
   box-shadow: var(--card-shadow);
   max-width: 90%;
@@ -138,7 +153,7 @@ a:focus {
 .homepage-navigation p:first-child {
   margin-bottom: 0.8em;
   font-weight: bold;
-  color: var(--pastel-heading);
+  color: var(--dark-heading);
   font-size: 1.1em;
 }
 
@@ -146,20 +161,21 @@ a:focus {
 # Layout & Structure
 --------------------------------------------------------------*/
 .site-footer {
-  border-top: 1px solid var(--pastel-border);
+  border-top: 1px solid var(--dark-border);
   padding: 30px 0;
   margin-top: 50px;
-  color: var(--pastel-text);
+  color: var(--dark-text-muted);
   font-size: 0.9em;
   text-align: center;
 }
 
 .content-card {
-  background-color: white;
+  background-color: var(--darker-element);
   padding: 2em;
   border-radius: 8px;
   margin-bottom: 2em;
   box-shadow: var(--card-shadow);
+  border: 1px solid var(--dark-border);
 }
 
 /*--------------------------------------------------------------
@@ -174,18 +190,19 @@ a:focus {
   margin-bottom: 1.8em;
   padding: 1.5em;
   border-radius: 8px;
-  background-color: white;
+  background-color: var(--darker-element);
   box-shadow: var(--card-shadow);
   transition: transform 0.2s ease-in-out;
+  border: 1px solid var(--dark-border);
 }
 
 .post-list > li:hover {
   transform: translateY(-3px);
+  border-color: var(--pastel-primary);
 }
 
 .post-meta, .post-date {
-  color: var(--pastel-text);
-  opacity: 0.8;
+  color: var(--dark-text-muted);
   font-size: 0.9em;
 }
 
@@ -206,6 +223,11 @@ a:focus {
   margin-top: 0.6em;
   font-weight: 500;
   font-size: 0.9em;
+  color: var(--pastel-secondary);
+}
+
+.read-more-link:hover {
+  color: var(--pastel-primary);
 }
 
 /*--------------------------------------------------------------
@@ -214,8 +236,9 @@ a:focus {
 pre, code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 0.9em;
-  background-color: var(--pastel-code-bg);
+  background-color: var(--dark-code-bg);
   border-radius: 4px;
+  color: #e0e0e0;
 }
 
 code {
@@ -225,7 +248,7 @@ code {
 pre {
   padding: 1em;
   overflow-x: auto;
-  border: 1px solid var(--pastel-border);
+  border: 1px solid var(--dark-border);
   margin: 1.5em 0;
 }
 
@@ -239,10 +262,9 @@ blockquote {
   border-left: 4px solid var(--pastel-secondary);
   padding: 0.8em 1.5em;
   margin: 1.5em 0;
-  color: var(--pastel-text);
+  color: var(--dark-text);
   font-style: italic;
-  opacity: 0.9;
-  background-color: rgba(247, 213, 217, 0.1);
+  background-color: var(--dark-blockquote-bg);
   border-radius: 0 4px 4px 0;
 }
 
@@ -269,13 +291,14 @@ img {
   font-size: 1.4em;
   margin-top: 2em;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid var(--pastel-border);
+  border-bottom: 1px solid var(--dark-border);
+  color: var(--dark-heading);
 }
 
 .archive-month {
   font-size: 1.2em;
   margin-top: 1.5em;
-  color: var(--pastel-heading);
+  color: var(--dark-heading);
 }
 
 /*--------------------------------------------------------------
@@ -297,14 +320,24 @@ img {
   background-color: var(--pastel-secondary);
   border-radius: 15px;
   font-size: 0.8em;
-  color: var(--pastel-heading);
-  transition: background-color 0.2s ease;
+  color: var(--dark-bg);
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .tag-item:hover,
 .category-item:hover {
-  background-color: #f0c0c6;
+  background-color: var(--pastel-primary);
   text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.category-item {
+  background-color: var(--pastel-tertiary);
+}
+
+.category-item:hover {
+  background-color: #66a677;
 }
 
 .post-tags,
@@ -313,16 +346,76 @@ img {
 }
 
 /*--------------------------------------------------------------
+# Syntax Highlighting Overrides for Dark Theme
+--------------------------------------------------------------*/
+.highlight {
+  background: var(--dark-code-bg);
+}
+
+.highlighter-rouge .highlight {
+  background: var(--dark-code-bg);
+}
+
+/* You may need to add more specific syntax highlighting overrides */
+.highlight .c { color: #75715e } /* Comment */
+.highlight .err { color: #f07178 } /* Error */
+.highlight .k { color: #c792ea } /* Keyword */
+.highlight .l { color: #f78c6c } /* Literal */
+.highlight .n { color: #e0e0e0 } /* Name */
+.highlight .o { color: #89ddff } /* Operator */
+.highlight .p { color: #e0e0e0 } /* Punctuation */
+.highlight .cm { color: #75715e } /* Comment.Multiline */
+.highlight .cp { color: #75715e } /* Comment.Preproc */
+.highlight .c1 { color: #75715e } /* Comment.Single */
+.highlight .cs { color: #75715e } /* Comment.Special */
+.highlight .gd { color: #f07178 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gh { color: #e0e0e0; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #c3e88d } /* Generic.Inserted */
+.highlight .gp { color: #75715e; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #89ddff; font-weight: bold } /* Generic.Subheading */
+.highlight .kc { color: #c792ea } /* Keyword.Constant */
+.highlight .kd { color: #c792ea } /* Keyword.Declaration */
+.highlight .kn { color: #89ddff } /* Keyword.Namespace */
+.highlight .kp { color: #c792ea } /* Keyword.Pseudo */
+.highlight .kr { color: #c792ea } /* Keyword.Reserved */
+.highlight .kt { color: #ffcb6b } /* Keyword.Type */
+.highlight .ld { color: #c3e88d } /* Literal.Date */
+.highlight .m { color: #f78c6c } /* Literal.Number */
+.highlight .s { color: #c3e88d } /* Literal.String */
+.highlight .na { color: #89ddff } /* Name.Attribute */
+.highlight .nb { color: #e0e0e0 } /* Name.Builtin */
+.highlight .nc { color: #ffcb6b } /* Name.Class */
+.highlight .no { color: #f07178 } /* Name.Constant */
+.highlight .nd { color: #89ddff } /* Name.Decorator */
+.highlight .ni { color: #e0e0e0 } /* Name.Entity */
+.highlight .ne { color: #f07178 } /* Name.Exception */
+.highlight .nf { color: #82aaff } /* Name.Function */
+.highlight .nl { color: #e0e0e0 } /* Name.Label */
+.highlight .nn { color: #ffcb6b } /* Name.Namespace */
+.highlight .nx { color: #82aaff } /* Name.Other */
+.highlight .py { color: #e0e0e0 } /* Name.Property */
+.highlight .nt { color: #89ddff } /* Name.Tag */
+.highlight .nv { color: #f07178 } /* Name.Variable */
+.highlight .ow { color: #89ddff } /* Operator.Word */
+.highlight .w { color: #e0e0e0 } /* Text.Whitespace */
+
+/*--------------------------------------------------------------
 # Responsive Adjustments
 --------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
   .site-nav {
-    background-color: var(--pastel-bg);
-    border-color: var(--pastel-border);
+    background-color: var(--darker-element);
+    border-color: var(--dark-border);
   }
   
   .site-nav .menu-icon > svg path {
-    fill: var(--pastel-heading);
+    fill: var(--dark-heading);
+  }
+  
+  .site-nav .trigger {
+    background-color: var(--darker-element);
   }
   
   .homepage-navigation {
