@@ -1,48 +1,76 @@
 # Site Settings
-title: Your Name / Site Title          # Appears in the browser tab and header
-description: >-                        # A short description for SEO and RSS
-  A description of your personal website, focusing on analysis, essays, and work.
-baseurl: ""                           # The subpath of your site, e.g. /blog. Usually leave empty for username.github.io
-url: "https://yourusername.github.io" # The base hostname & protocol for your site
-github_username: yourusername         # Optional: Your GitHub username
-# twitter_username: yourusername      # Optional: Your Twitter username
+title: Your Name / Site Title
+description: >-
+  A personal website for sharing thoughtful essays, analysis, and reflections on topics I'm passionate about.
+baseurl: ""
+url: "https://yourusername.github.io"
+github_username: yourusername
+# twitter_username: yourusername
+# linkedin_username: yourusername
+
+# Optional: Set your avatar/profile image
+# author:
+#   picture: /assets/images/profile.jpg
 
 # Build settings
-# Theme: Choose a theme. 'minima' is a good, clean default.
-# You can find more themes at https://rubygems.org/search?query=jekyll-theme
-# Or browse https://jekyllthemes.io/, https://jamstackthemes.dev/ssg/jekyll/
+# Theme
 theme: minima
 
-# Plugins included with the github-pages gem
+# Plugins
 plugins:
-  - jekyll-feed         # Creates an RSS feed (good practice)
-  - jekyll-seo-tag    # Adds metadata tags for search engines
-# - jekyll-gist       # Lets you embed GitHub Gists easily
-# - jekyll-github-metadata # Accesses repo metadata
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination settings
+paginate: 5
+paginate_path: "/page/:num/"
 
 # Exclude from processing
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-#   - README.md
-#   - LICENSE
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
 
-# Optional: Setup default front matter for specific file types
+# Setup default front matter
 defaults:
-  -
-    scope:
-      path: "" # empty string for all files
-      type: "pages" # limit to pages (index.md, work.md, about.md)
+  - scope:
+      path: ""
+      type: "pages"
     values:
-      layout: "page" # Use the 'page' layout from the theme
-  -
-    scope:
-      path: "_posts" # limit to files in _posts folder
+      layout: "page"
+      
+  - scope:
+      path: "_posts"
       type: "posts"
     values:
-      layout: "post" # Use the 'post' layout from the theme
+      layout: "post"
+      comments: false
+      
+  # Create a default for the home page
+  - scope:
+      path: "index.md"
+    values:
+      layout: "home"
+
+# Collections (for organizing different types of content)
+collections:
+  essays:
+    output: true
+    permalink: /essays/:path/
+  book_notes:
+    output: true
+    permalink: /book-notes/:path/
+
+# Optional: Enable excerpts on the home page
+show_excerpts: true
+
+# Configure the date format
+date_format: "%B %-d, %Y"
