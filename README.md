@@ -1,2 +1,0 @@
-# NahrWahr.io
-Personal Website
