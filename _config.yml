@@ -1,76 +1,14 @@
-# Site Settings
-title: Your Name / Site Title
+# Replace placeholder values
+title: NahrWahr.io  # Change from "Your Name / Site Title"
 description: >-
   A personal website for sharing thoughtful essays, analysis, and reflections on topics I'm passionate about.
 baseurl: ""
-url: "https://yourusername.github.io"
-github_username: yourusername
-# twitter_username: yourusername
-# linkedin_username: yourusername
+url: "https://nahrwahr.github.io"  # Adjust to your actual GitHub username
+github_username: nahrwahr  # Update to your actual GitHub username
 
-# Optional: Set your avatar/profile image
-# author:
-#   picture: /assets/images/profile.jpg
-
-# Build settings
-# Theme
+# Ensure the theme is properly set
 theme: minima
 
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-
-# Pagination settings
+# Make sure pagination is working properly
 paginate: 5
 paginate_path: "/page/:num/"
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - README.md
-  - LICENSE
-
-# Setup default front matter
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-      
-  - scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      layout: "post"
-      comments: false
-      
-  # Create a default for the home page
-  - scope:
-      path: "index.md"
-    values:
-      layout: "home"
-
-# Collections (for organizing different types of content)
-collections:
-  essays:
-    output: true
-    permalink: /essays/:path/
-  book_notes:
-    output: true
-    permalink: /book-notes/:path/
-
-# Optional: Enable excerpts on the home page
-show_excerpts: true
-
-# Configure the date format
-date_format: "%B %-d, %Y"
