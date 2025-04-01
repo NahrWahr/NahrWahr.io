@@ -1,24 +1,11 @@
+---
+# Front matter tells Jekyll to process this file
+---
+
 @import "minima"; // Import the theme's styles FIRST
 
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# General / Body
-# Typography (Headings, Paragraphs)
-# Links & Navigation
-# Layout & Structure (Header, Footer, Wrapper)
-# Posts & Pages Content
-# Code Blocks & Blockquotes
-# Lists
-# Custom Classes (Optional)
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# General / Body
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Variables (Optional but helpful)
+# Variables (You already had these - good!)
 --------------------------------------------------------------*/
 :root {
   --pastel-bg: #fef9f3; /* Soft cream background */
@@ -32,168 +19,130 @@
 }
 
 /*--------------------------------------------------------------
-# General / Body
+# General / Body ***(RULES NEEDED)***
 --------------------------------------------------------------*/
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 1.7; /* Slightly more spacing */
-  color: var(--pastel-text);
-  background-color: var(--pastel-bg);
-  font-size: 17px; /* Slightly larger base font */
+  line-height: 1.7;
+  color: var(--pastel-text); /* USE VARIABLE */
+  background-color: var(--pastel-bg); /* USE VARIABLE */
+  font-size: 17px;
 }
 
 /*--------------------------------------------------------------
-# Typography
+# Typography ***(RULES NEEDED)***
 --------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  color: var(--pastel-heading);
+  color: var(--pastel-heading); /* USE VARIABLE */
   margin-top: 1.8em;
   margin-bottom: 0.8em;
 }
-
 h1 { font-size: 2.4em; }
 h2 { font-size: 1.9em; }
 h3 { font-size: 1.5em; }
-
-p {
-  margin-bottom: 1.3em;
-}
+p { margin-bottom: 1.3em; }
 
 /*--------------------------------------------------------------
-# Links & Navigation (Theme Overrides)
+# Links & Navigation (Theme Overrides) ***(RULES NEEDED)***
 --------------------------------------------------------------*/
 a {
-  color: var(--pastel-primary-darker); /* Use a darker pastel for default links */
+  color: var(--pastel-primary-darker); /* USE VARIABLE */
   text-decoration: none;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-
 a:hover,
 a:focus {
-  color: var(--pastel-heading); /* Use heading color on hover */
+  color: var(--pastel-heading); /* USE VARIABLE */
   text-decoration: underline;
 }
 
 /* Minima Header Adjustments */
 .site-header {
-  border-top: 4px solid var(--pastel-primary); /* Accent border */
-  border-bottom: 1px solid var(--pastel-border);
-  background-color: var(--pastel-bg); /* Ensure header matches body */
+  border-top: 4px solid var(--pastel-primary); /* USE VARIABLE */
+  border-bottom: 1px solid var(--pastel-border); /* USE VARIABLE */
+  background-color: var(--pastel-bg); /* USE VARIABLE */
   padding-top: 15px;
   padding-bottom: 15px;
 }
-
 .site-title, .site-title:visited {
-  color: var(--pastel-heading) !important; /* Override minima's default */
+  color: var(--pastel-heading) !important; /* USE VARIABLE */
   font-weight: bold;
 }
-
 .site-nav .page-link {
-  color: var(--pastel-text);
+  color: var(--pastel-text); /* USE VARIABLE */
   margin-left: 18px;
 }
 .site-nav .page-link:hover {
-  color: var(--pastel-primary-darker);
+  color: var(--pastel-primary-darker); /* USE VARIABLE */
   text-decoration: none;
 }
 
 /*--------------------------------------------------------------
-# Button Styles
+# Button Styles ***(RULES NEEDED)***
 --------------------------------------------------------------*/
 .button {
-    display: inline-block; /* Allow padding and margins */
-    background-color: var(--pastel-primary);
-    color: var(--pastel-heading); /* Darker text on light button */
-    padding: 12px 25px; /* Generous padding */
-    border-radius: 25px; /* Pill shape */
+    display: inline-block;
+    background-color: var(--pastel-primary); /* USE VARIABLE */
+    color: var(--pastel-heading); /* USE VARIABLE */
+    padding: 12px 25px;
+    border-radius: 25px;
     text-decoration: none;
-    font-weight: 600; /* Make button text slightly bolder */
-    margin: 5px 10px 5px 0; /* Spacing around buttons */
-    border: 1px solid transparent; /* Placeholder for potential border */
+    font-weight: 600;
+    margin: 5px 10px 5px 0;
+    border: 1px solid transparent;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
 .button:hover,
 .button:focus {
-    background-color: var(--pastel-primary-darker); /* Darken on hover */
-    color: var(--pastel-heading);
-    text-decoration: none; /* Remove underline on hover */
-    transform: translateY(-1px); /* Slight lift effect */
+    background-color: var(--pastel-primary-darker); /* USE VARIABLE */
+    color: var(--pastel-heading); /* USE VARIABLE */
+    text-decoration: none;
+    transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Optional: Style for the button container on the homepage */
+/* Homepage navigation container styles */
 .homepage-navigation {
-  text-align: center; /* Center the buttons */
+  text-align: center;
   margin-top: 2em;
   margin-bottom: 2em;
   padding: 1.5em 0;
-  background-color: #fff; /* Slight contrast maybe? Or keep var(--pastel-bg) */
+  background-color: #fff; /* Or use var(--pastel-bg) if preferred */
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
-.homepage-navigation p:first-child { /* Style the "Explore sections" text */
+.homepage-navigation p:first-child {
     margin-bottom: 0.5em;
     font-weight: bold;
-    color: var(--pastel-heading);
+    color: var(--pastel-heading); /* USE VARIABLE */
 }
 
-
 /*--------------------------------------------------------------
-# Layout & Structure (Theme Overrides)
+# Layout & Structure (Theme Overrides) ***(RULES NEEDED)***
 --------------------------------------------------------------*/
-.wrapper {
-  max-width: 900px; /* Slightly wider */
-  padding-right: 25px;
-  padding-left: 25px;
-}
-
+.wrapper { max-width: 900px; padding-right: 25px; padding-left: 25px; }
 .site-footer {
-  border-top: 1px solid var(--pastel-border);
-  padding: 30px 0;
-  margin-top: 50px;
-  color: var(--pastel-text);
-  font-size: 0.9em;
-  text-align: center;
+  border-top: 1px solid var(--pastel-border); /* USE VARIABLE */
+  padding: 30px 0; margin-top: 50px;
+  color: var(--pastel-text); /* USE VARIABLE */
+  font-size: 0.9em; text-align: center;
 }
 
 /*--------------------------------------------------------------
-# Posts & Pages Content
+# Posts & Pages Content ***(RULES NEEDED)***
 --------------------------------------------------------------*/
 .post-list { list-style: none; padding-left: 0; }
-.post-list > li {
-    margin-bottom: 1.8em;
-    padding-bottom: 1.8em;
-    border-bottom: 1px dashed var(--pastel-border);
-}
+.post-list > li { margin-bottom: 1.8em; padding-bottom: 1.8em; border-bottom: 1px dashed var(--pastel-border); /* USE VARIABLE */ }
 .post-list > li:last-child { border-bottom: none; }
-
-.post-meta, .post-date {
-  color: var(--pastel-text);
-  opacity: 0.8;
-  font-size: 0.9em;
-}
+.post-meta, .post-date { color: var(--pastel-text); /* USE VARIABLE */ opacity: 0.8; font-size: 0.9em; }
 
 /*--------------------------------------------------------------
-# Code Blocks & Blockquotes
+# Code Blocks & Blockquotes ***(RULES NEEDED)***
 --------------------------------------------------------------*/
-pre, code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 0.9em;
-  background-color: var(--pastel-code-bg);
-  border-radius: 4px;
-}
+pre, code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; font-size: 0.9em; background-color: var(--pastel-code-bg); /* USE VARIABLE */ border-radius: 4px; }
 code { padding: 0.2em 0.4em; }
-pre { padding: 1em; overflow-x: auto; border: 1px solid var(--pastel-border); }
+pre { padding: 1em; overflow-x: auto; border: 1px solid var(--pastel-border); /* USE VARIABLE */ }
 pre code { padding: 0; background-color: transparent; border: none; }
-
-blockquote {
-  border-left: 4px solid var(--pastel-secondary); /* Use secondary pastel for quote border */
-  padding-left: 1.5em;
-  margin-left: 0; margin-right: 0;
-  color: var(--pastel-text);
-  font-style: italic;
-  opacity: 0.9;
-}
+blockquote { border-left: 4px solid var(--pastel-secondary); /* USE VARIABLE */ padding-left: 1.5em; margin-left: 0; margin-right: 0; color: var(--pastel-text); /* USE VARIABLE */ font-style: italic; opacity: 0.9; }
