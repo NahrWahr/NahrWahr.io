@@ -1,9 +1,9 @@
 # Site settings
 title: NahrWahr.io
 description: A personal website for sharing thoughtful essays and analyses
-url: "https://yourusername.github.io"
-baseurl: ""
-github_username: yourusername
+url: "https://nahrwahr.github.io"
+baseurl: "https://nahrwahr.github.io/PersonalSite/"
+github_username: nahrwahr
 
 # Build settings
 markdown: kramdown
