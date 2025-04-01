@@ -1,14 +1,14 @@
-# Replace placeholder values
-title: NahrWahr.io  # Change from "Your Name / Site Title"
-description: >-
-  A personal website for sharing thoughtful essays, analysis, and reflections on topics I'm passionate about.
+# Site settings
+title: NahrWahr.io
+description: A personal website for sharing thoughtful essays and analyses
+url: "https://yourusername.github.io"
 baseurl: ""
-url: "https://nahrwahr.github.io"  # Adjust to your actual GitHub username
-github_username: nahrwahr  # Update to your actual GitHub username
+github_username: yourusername
 
-# Ensure the theme is properly set
-theme: minima
+# Build settings
+markdown: kramdown
+permalink: /:title/
+exclude: [Gemfile, Gemfile.lock, README.md]
 
-# Make sure pagination is working properly
-paginate: 5
-paginate_path: "/page/:num/"
+# Theme settings
+show_excerpts: true

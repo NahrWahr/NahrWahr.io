@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-# Use the GitHub Pages gem to ensure compatibility
-# It includes Jekyll and common themes like 'minima'
-gem "github-pages", group: :jekyll_plugins
+gem "jekyll", "~> 4.2.0"
+gem "webrick", "~> 1.7"
 
-# If you want to specify a theme directly (like minima, the default)
-# gem "minima", "~> 2.5"
-# gem "jekyll", "~> 4.2" # Or a specific Jekyll version if needed locally
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag", "~> 2.7"
+end
